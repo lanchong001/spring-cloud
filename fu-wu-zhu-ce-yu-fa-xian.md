@@ -90,7 +90,7 @@ spring:
 
 ### Eureka Server高可用\(集群\)
 
-
+* euraka server 相互注册
 
 
 
