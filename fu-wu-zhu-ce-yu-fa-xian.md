@@ -119,6 +119,8 @@ eureka:
       defaultZone: http://localhost:8761/eureka/,http://localhost:8762/eureka/
 ```
 
+* 三台以上的eureka server服务器时，每一台服务器分别注册到除自己以外的其他机器中注册。 eureka client 则注册到所有的eureka server 服务器中
+
 ### Eureka总结
 
 * @EnableEureKaServer ，@EnableDiscoveryClient ，@EnableEurekaClient
