@@ -6,4 +6,5 @@
 * [服务拆分](fu-wu-chai-fen.md)
 * [应用通信](ying-yong-tong-xin.md)
 * [统一配置中心](tong-yi-pei-zhi-zhong-xin.md)
+* [消息和异步](xiao-xi-he-yi-bu.md)
 
