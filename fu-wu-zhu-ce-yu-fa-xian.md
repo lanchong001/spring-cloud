@@ -121,6 +121,10 @@ eureka:
 
 * 三台以上的eureka server服务器时，每一台服务器分别注册到除自己以外的其他机器中注册。 eureka client 则注册到所有的eureka server 服务器中
 
+### Eureka Client 分组
+
+* 通过将spring.application.name设置不同的应用名称来打包应用分组的目的，便于管理不同的区域，不同的角色，访问不同的 Eureka Client 客户端程序
+
 ### Eureka总结
 
 * @EnableEureKaServer ，@EnableDiscoveryClient ，@EnableEurekaClient
