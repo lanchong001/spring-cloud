@@ -90,7 +90,17 @@ spring:
 
 ### Eureka Server高可用\(集群\)
 
-* euraka server 相互注册
+* eureka server 相互注册
+* 两台eureka server 1, eureka server 2 相互注册
+
+```
+# Server 1 注册到 Server 2
+
+eureka:
+  client:
+    service-url:
+      defaultZone: "http://localhost:8762/eureka/"
+```
 
 ### Eureka总结
 
