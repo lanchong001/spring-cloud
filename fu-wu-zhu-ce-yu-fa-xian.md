@@ -88,5 +88,9 @@ spring:
     name: client
 ```
 
+### Eureka Server高可用\(集群\)
+
+
+
 
 
