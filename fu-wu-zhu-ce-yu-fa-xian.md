@@ -68,5 +68,24 @@ server:
 
 * main 方法增加 @EnableDiscoveryClient 注解
 
+* 修改项目配置文件  application.yml ,并增加相关配置
+
+```
+eureka:
+  client:
+    service-url:
+      defaultZone: "http://localhost:8761/eureka/"
+  instance:
+# 设置eureka客户端域名
+    hostname: clientName
+server:
+# 设置服务端口
+  port: 8081
+spring:
+  application:
+# 设置应用名称
+    name: client
+```
+
 
 
