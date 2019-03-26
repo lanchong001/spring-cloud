@@ -8,4 +8,5 @@
 * [统一配置中心](tong-yi-pei-zhi-zhong-xin.md)
 * [消息和异步](xiao-xi-he-yi-bu.md)
 * [服务网关](fu-wu-wang-guan.md)
+* [Zuul综合使用](zuulzong-he-shi-yong.md)
 
