@@ -143,22 +143,16 @@ eureka:
 * 客户端发现（Eureka,Zookeeper）
 * 服务端发现（Nginx,Kubernetes）
 
-
-
 ### ZooKeeper 与 EureKa 的区别
 
 * Zookeeper 会选举一个leader，由leader同步到其他机器，并且会保存相关的日志
 * Eureka没有中心的概念,各个Server之间相互进行注册，不会保存日志信息
 
-[http://jm.taobao.org/2018/06/13/%E5%81%9A%E6%9C%8D%E5%8A%A1%E5%8F%91%E7%8E%B0%EF%BC%9F/](http://jm.taobao.org/2018/06/13/%E5%81%9A%E6%9C%8D%E5%8A%A1%E5%8F%91%E7%8E%B0%EF%BC%9F/)
+[http://jm.taobao.org/2018/06/13/%E5%81%9A%E6%9C%8D%E5%8A%A1%E5%8F%91%E7%8E%B0%EF%BC%9F/](http://jm.taobao.org/2018/06/13/%E5%81%9A%E6%9C%8D%E5%8A%A1%E5%8F%91%E7%8E%B0%EF%BC%9F/ "阿里巴巴为什么不用 ZooKeeper 做服务发现？")
 
 ### 客户端发现（Eureka）缺点
 
 * 缺点：如果采用非java语言进行开发的话,需要其他语言自己实现Eureka的客户端程序（比如： nodejs的eureka-js-client）
-
-
-
-
 
 
 
