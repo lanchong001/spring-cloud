@@ -74,6 +74,7 @@ server:
 eureka:
   client:
     service-url:
+# 配置eureka 注册中心地址
       defaultZone: "http://localhost:8761/eureka/"
   instance:
 # 设置eureka客户端域名
