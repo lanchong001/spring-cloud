@@ -10,4 +10,5 @@
 * [服务网关](fu-wu-wang-guan.md)
 * [Zuul综合使用](zuulzong-he-shi-yong.md)
 * [服务容错](fu-wu-rong-cuo.md)
+* [服务跟踪](fu-wu-gen-zong.md)
 
