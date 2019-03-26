@@ -92,5 +92,18 @@ spring:
 
 * euraka server 相互注册
 
+### Eureka总结
+
+* @EnableEureKaServer ，@EnableDiscoveryClient ，@EnableEurekaClient
+* 心跳检测，健康检查，负载均衡
+* Eureka的高可用，生产环境建议至少部署两台以上
+* 分布式系统中，服务注册中心是最重要的基础部分
+
+### @EnableDiscoveryClient与@EnableEurekaClient区别
+
+* @EnableDiscoveryClient基于spring-cloud-commons。 如果使用其他注册中心（eureka、consul、zookeeper），推荐使用 @EnableDiscoveryClient注解
+
+* 如果选用的注册中心是eureka，那么就推荐@EnableEurekaClient
+
 
 
