@@ -138,12 +138,10 @@ eureka:
 
 * 如果选用的注册中心是eureka，那么就推荐@EnableEurekaClient
 
-
-
 ### 分布式服务发现的两种方式
 
-* 客户端发现
-* 服务端发现
+* 客户端发现（Eureka）
+* 服务端发现（Nginx,Zookeeper,Kubernetes）
 
 
 
