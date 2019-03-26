@@ -30,16 +30,21 @@
 eureka:
   client:
     service-url:
+# 设置与Eureka Server 交互的地址
       defaultZone: "http://localhost:8761/eureka/"
+# 是否将自己注册到Eureka Server， 默认为true(由于当前应用就是Eureka Server， 因此设为 false)
     register-with-eureka: false
+# 是否从Eureka Server获取注册信息，默认为true(一个单点的 Eureka Server，不需要同步其他节点的数据，可以设为false)
+    fetch-registry: false
+# 禁用自我保护模式,不进行客户端不在线警告提醒
+  server:
+    enable-self-preservation: false
 spring:
   application:
     name: eureka
 server:
   port: 8761
 ```
-
-
 
 
 
