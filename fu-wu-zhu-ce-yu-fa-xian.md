@@ -53,19 +53,20 @@ server:
 * spring boot 自动应用以下依赖包
 
   * ```
-    	<parent>
-    		<groupId>org.springframework.boot</groupId>
-    		<artifactId>spring-boot-starter-parent</artifactId>
-    		<version>2.1.3.RELEASE</version>
-    		<relativePath/> <!-- lookup parent from repository -->
-    	</parent>
-	
-    	<dependency>
-    		<groupId>org.springframework.cloud</groupId>
-    		<artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
-    	</dependency>
+        <parent>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-parent</artifactId>
+            <version>2.1.3.RELEASE</version>
+            <relativePath/> <!-- lookup parent from repository -->
+        </parent>
+
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
+        </dependency>
     ```
 
-* 
+* main 方法增加 @EnableDiscoveryClient 注解
+
 
 
