@@ -72,9 +72,9 @@ public class RestTemplateConfig {
 
 ### Ribbon主要主件：
 
-* ServerList
-* IRule
-* ServerListFilter
+* ServerList：获取所有可用的服务列表
+* IRule：通过rule规则选择对应的服务
+* ServerListFilter：过滤相关服务列表
 
 
 
