@@ -64,5 +64,17 @@ public class RestTemplateConfig {
 * Feign
 * Zuul
 
+### Ribbon软负载均衡：
+
+* 服务发现
+* 服务选择规则
+* 服务监听
+
+### Ribbon主要主件：
+
+* ServerList
+* IRule
+* ServerListFilter
+
 
 
