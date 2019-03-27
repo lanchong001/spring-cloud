@@ -76,5 +76,13 @@ public class RestTemplateConfig {
 * IRule：通过rule规则选择对应的服务
 * ServerListFilter：过滤相关服务列表
 
+### 配置Ribbon规则：
+
+```
+PRODUCT：
+  ribbon:
+    NFLoadBalanceRuleClassName: com.netflix.loadbalancer.RandomRule
+```
+
 
 
