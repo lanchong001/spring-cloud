@@ -36,7 +36,25 @@
         return reponse;
 ```
 
-* 方式3
+* 方式3\(利用@LoadBalanced注解，可在RestTemplate 使用应用的名字进行访问\)
+
+```
+@Component
+public class RestTemplateConfig {
+
+    @Bean
+    @LoadBalanced
+    public RestTemplate restTemplate(){
+        return new RestTemplate();
+    }
+}
+```
+
+```
+        String reponse = restTemplate.getForObject("http://PRODUCT/msg",String.class);
+        log.info(reponse);
+        return reponse;
+```
 
 
 
