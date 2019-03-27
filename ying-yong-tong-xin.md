@@ -20,7 +20,7 @@
         return reponse;
 ```
 
-* 方式2
+* 方式2\(使用 LoadBalancerClient 获取url地址,使用 RestTemplate 进行调用\)
 
 ```
     @Autowired
