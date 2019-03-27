@@ -20,5 +20,21 @@
         return reponse;
 ```
 
+* 方式2
+
+```
+    @Autowired
+    private LoadBalancerClient loadBalancerClient;
+```
+
+```
+        RestTemplate restTemplate = new RestTemplate();
+        ServiceInstance serviceInstance = loadBalancerClient.choose("PRODUCT");        //"PRODUCT": eureka Application
+        String url = String.format("http://%s:%s/msg",serviceInstance.getHost(),serviceInstance.getPort());
+        String reponse = restTemplate.getForObject(url,String.class);
+        log.info(reponse);
+        return reponse;
+```
+
 
 
