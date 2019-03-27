@@ -12,5 +12,4 @@
 * [10.Zuul综合使用](zuulzong-he-shi-yong.md)
 * [11.服务容错](fu-wu-rong-cuo.md)
 * [12.服务跟踪](fu-wu-gen-zong.md)
-* [JPA](jpa.md)
 
