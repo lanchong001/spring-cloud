@@ -11,7 +11,7 @@
 
 ### RestTemplate使用的方式
 
-* 方式1\(固定的url地址\)
+* 方式1\(直接使用RestTemplate ，url地址写死\)
 
 ```
         RestTemplate restTemplate = new RestTemplate();
