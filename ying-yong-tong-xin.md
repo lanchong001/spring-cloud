@@ -56,5 +56,13 @@ public class RestTemplateConfig {
         return reponse;
 ```
 
+---
+
+### 客户端负载均衡：Ribbon, 使用到Ribbon的客户端
+
+* RestTemplate
+* Feign
+* Zuul
+
 
 
