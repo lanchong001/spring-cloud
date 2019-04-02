@@ -108,7 +108,9 @@ eureka:
 2019-04-02 16:28:07.797  INFO 11676 --- [nio-9003-exec-5] o.s.c.c.s.e.NativeEnvironmentRepository  : Adding property source: file:/E:/WorkSpaces/lbxframework/basedir/order.yml
 ```
 
-### 配置的动态刷新：\(在gitlab中修改配置文件后,刷新Config Server 对应的配置信息的页面，相关的配置信息会发生变化。这时，如果刷新Config Client, Config Client对应的配置信息不会发生变化\)
+### 配置的动态刷新：
+
+> 在gitlab中修改配置文件后,刷新Config Server 对应的配置信息的页面，相关的配置信息会发生变化。这时，如果刷新Config Client, Config Client对应的配置信息不会发生变化
 
 
 
