@@ -114,3 +114,9 @@ eureka:
 
 
 
+### Spring Cloud Bus 自动刷新配置信息
+
+![](/assets/spring cloud config bus.png)
+
+
+
