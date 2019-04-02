@@ -17,14 +17,14 @@ import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.cloud.config.server.EnableConfigServer;
 
 @SpringBootApplication
-@EnableDiscoveryClient			//注册到eureka
-@EnableConfigServer			//标记为注册中心	
+@EnableDiscoveryClient            //注册到eureka
+@EnableConfigServer            //标记为注册中心    
 public class ConfigServerApplication {
 
-	public static void main(String[] args) {
-		SpringApplication.run(ConfigServerApplication.class, args);
-	}
-}  
+    public static void main(String[] args) {
+        SpringApplication.run(ConfigServerApplication.class, args);
+    }
+}
 ```
 
 ```
@@ -58,11 +58,40 @@ profiles: 环境名称
 
 lable：git分支\(branch\)
 
-
-
 [http://localhost:8080/order-a.yml](http://localhost:8080/order-a.yml)
 
 [http://localhost:8080/order-dev.yml](http://localhost:8080/order-dev.yml)
 
 [http://localhost:8080/release/order-dev.yml](http://localhost:8080/release/order-dev.yml)
+
+### Config Client 配置
+
+```
+@SpringBootApplication
+@EnableDiscoveryClient		//增加EnableDiscoveryClient注解
+public class ConfigClientApplication {
+
+	public static void main(String[] args) {
+		SpringApplication.run(ConfigClientApplication.class, args);
+	}
+}
+```
+
+重命名并创建bootstrap.yml
+
+```
+spring:
+  application:
+    name: order
+  cloud:
+    config:
+      discovery:
+        enabled: true
+#        配置在eureka注册的服务ID
+        service-id: CONFIG
+#      配置运行环境(test:测试环境)
+      profile: test
+```
+
+
 
