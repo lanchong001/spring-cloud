@@ -91,15 +91,15 @@ spring:
         service-id: CONFIG
 #      配置运行环境(test:测试环境)
       profile: test
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8762/eureka/
 ```
 
 ### Config Server 集群
 
 直接启动多台Config Server,客户端通过 service-id,随机的在各台Config Server中获取对应的配置信息
-
-
-
-
 
 > 访问 [http://localhost:9003/order-test.yml](http://localhost:9003/order-test.yml) 时，会同时访问 一下两个文件。并且，将两个配置文件的数据合并，再返回给Config Clieng 进行使用。因此，可以将通用的配置信息写到order.yml文件中，便于各个环境进行应用。
 
@@ -107,8 +107,6 @@ spring:
 2019-04-02 16:28:07.797  INFO 11676 --- [nio-9003-exec-5] o.s.c.c.s.e.NativeEnvironmentRepository  : Adding property source: file:/E:/WorkSpaces/lbxframework/basedir/order-test.yml
 2019-04-02 16:28:07.797  INFO 11676 --- [nio-9003-exec-5] o.s.c.c.s.e.NativeEnvironmentRepository  : Adding property source: file:/E:/WorkSpaces/lbxframework/basedir/order.yml
 ```
-
-
 
 ### 配置的动态刷新：
 
