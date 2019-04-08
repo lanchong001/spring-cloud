@@ -266,7 +266,7 @@ public class EnvController {
 2. 启动 spring cloud config client,动态获取配置信息
 3. 修改 gitlab 上的相关配置
 4. 配置修改后，刷新 config server 对应的相关页面，配置信息自动会获取最新的。但是，客户端的配置信息不对自动更新
-5. 利用postMan 请求 config server 的相关地址（http://192.168.1.221:9001/actuator/bus-refresh），刷新配置信息
+5. 利用postMan 请求 config server 的相关地址\[xxxx[/actuator/bus-refresh](http://192.168.1.221:9001/actuator/bus-refresh），刷新配置信息)\]\([http://192.168.1.221:9001/actuator/bus-refresh\)，刷新配置信息](http://192.168.1.221:9001/actuator/bus-refresh），刷新配置信息)
 6. 再次刷新spring cloud config client 对应的页面时，配置信息就会自动更新了
 
 
