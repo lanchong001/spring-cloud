@@ -18,7 +18,7 @@ import org.springframework.cloud.config.server.EnableConfigServer;
 
 @SpringBootApplication
 @EnableDiscoveryClient            //注册到eureka
-@EnableConfigServer            //标记为注册中心    
+@EnableConfigServer               //标记为注册中心    
 public class ConfigServerApplication {
 
     public static void main(String[] args) {
@@ -112,11 +112,35 @@ eureka:
 
 > 在gitlab中修改配置文件后,刷新Config Server 对应的配置信息的页面，相关的配置信息会发生变化。这时，如果刷新Config Client, Config Client对应的配置信息不会发生变化
 
-
-
 ### Spring Cloud Bus 自动刷新配置信息
 
 ![](/assets/spring cloud config bus.png)
+
+---
+
+### Spring Cloud Config Server 配置中心\(Spring Cloud Bus 自动刷新\)
+
+* 创建spring boot 项目，选择 Cloud Discovery -&gt; Eureka Discovery, Could Config -&gt; Config Server 进行创建
+
+* 在项目中引入以下依赖
+
+```
+		<!--spring cloud config server 依赖-->
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-config-server</artifactId>
+		</dependency>
+		<!--spring cloud eureka client 依赖-->
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
+		</dependency>
+		<!--spring cloud bus rabbitmq 依赖-->
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-bus-amqp</artifactId>
+		</dependency>
+```
 
 
 
