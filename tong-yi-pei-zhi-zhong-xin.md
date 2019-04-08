@@ -188,26 +188,58 @@ eureka:
 * 在项目中引入以下依赖
 
 ```
-		<!--spring cloud config client 依赖-->
-		<dependency>
-			<groupId>org.springframework.cloud</groupId>
-			<artifactId>spring-cloud-starter-config</artifactId>
-		</dependency>
-		<!--spring cloud eureka client 依赖-->
-		<dependency>
-			<groupId>org.springframework.cloud</groupId>
-			<artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
-		</dependency>
-		<!--spring cloud web 依赖-->
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-web</artifactId>
-		</dependency>
-		<!--spring cloud bus rabbitmq 依赖-->
-		<dependency>
-			<groupId>org.springframework.cloud</groupId>
-			<artifactId>spring-cloud-starter-bus-amqp</artifactId>
-		</dependency>
+        <!--spring cloud config client 依赖-->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-config</artifactId>
+        </dependency>
+        <!--spring cloud eureka client 依赖-->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
+        </dependency>
+        <!--spring cloud web 依赖-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+        <!--spring cloud bus rabbitmq 依赖-->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-bus-amqp</artifactId>
+        </dependency>
+```
+
+* Spring Boot 启动方法 main 方法增加  @EnableDiscoveryClient 注解
+
+* 修改项目配置文件 bootstrap.yml ,并增加相关配置
+
+```
+# 配置应用名称
+spring:
+  application:
+    name: order
+# config server 配置信息
+  cloud:
+    config:
+      discovery:
+        enabled: true
+#       配置在eureka注册的confer server 服务ID
+        service-id: config1
+#       配置运行环境(test:测试环境)
+      profile: test
+# rabbitmq配置信息
+  rabbitmq:
+    host: 192.168.1.104
+    port: 5672
+    username: admin
+    password: admin
+    virtual-host: rabbit_vhost
+# 注册中心配置信息
+eureka:
+  client:
+    service-url:
+      defaultZone: http://192.168.1.104:9999/eureka/
 ```
 
 
