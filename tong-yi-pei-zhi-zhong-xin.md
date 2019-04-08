@@ -242,5 +242,21 @@ eureka:
       defaultZone: http://192.168.1.104:9999/eureka/
 ```
 
+* 在需要获取配置信息的类中配置  @RefreshScope 注解
+
+```
+@RestController
+@RefreshScope    //配置 Spring cloud bus refresh 刷新范围
+public class EnvController {
+    @Value("${env}")
+    private String env;
+
+    @GetMapping("print")
+    public String print() {
+        return env;
+    }
+}
+```
+
 
 
