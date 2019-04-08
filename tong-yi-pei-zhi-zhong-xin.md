@@ -125,15 +125,83 @@ eureka:
 * 在项目中引入以下依赖
 
 ```
-		<!--spring cloud config server 依赖-->
+        <!--spring cloud config server 依赖-->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-config-server</artifactId>
+        </dependency>
+        <!--spring cloud eureka client 依赖-->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
+        </dependency>
+        <!--spring cloud bus rabbitmq 依赖-->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-bus-amqp</artifactId>
+        </dependency>
+```
+
+* Spring Boot 启动方法 main 方法增加  @EnableDiscoveryClient, @EnableConfigServer 注解
+* 修改项目配置文件 application.yml ,并增加相关配置
+
+```
+# 配置应用名称
+spring:
+  application:
+    name: config1
+  cloud:
+    config:
+      server:
+        git:
+# gitlab 相关配置信息
+          username: liuyuanming
+          password: 12345678
+          uri: http://10.252.0.29:19090/root/config-repo.git
+# rabbitmq配置信息
+  rabbitmq:
+    host: 192.168.1.104
+    port: 5672
+    username: admin
+    password: admin
+    virtual-host: rabbit_vhost
+# 允许/actuator/bus-refresh接口被外部调用
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+# 注册中心配置信息
+eureka:
+  client:
+    service-url:
+      defaultZone: http://192.168.1.104:9999/eureka/
+  instance:
+    prefer-ip-address: true
+    ip-address: 127.0.0.1
+```
+
+### Spring Cloud Config Client 客户端 \(Spring Cloud Bus 自动刷新\)
+
+* 创建spring boot 项目，选择 Cloud Discovery -&gt; Eureka Discovery, Could Config -&gt; Config Client 进行创建
+
+* 在项目中引入以下依赖
+
+```
+		<!--spring cloud config client 依赖-->
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
-			<artifactId>spring-cloud-config-server</artifactId>
+			<artifactId>spring-cloud-starter-config</artifactId>
 		</dependency>
 		<!--spring cloud eureka client 依赖-->
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
+		</dependency>
+		<!--spring cloud web 依赖-->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
 		<!--spring cloud bus rabbitmq 依赖-->
 		<dependency>
